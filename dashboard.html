@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stackly AI — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+         <img class="logo-svg" src="assets/images/logoimg.webp" alt="Stackly AI Logo" width="40" height="40"    >
+        <span class="brand-text">Stackly AI</span>
+      </a>
+
+      <nav class="nav" id="navLinks">
+        <div class="nav-item dropdown">
+          <a href="index.html" class="drop-btn">Home</a>
+          <div class="dropdown-content">
+            <a href="home2.html">Home2</a>
+          </div>
+        </div>
+        <a class="nav-item" href="about.html">About</a>
+        <a class="nav-item" href="services.html">Services</a>
+        <a class="nav-item" href="blog.html">Blog</a>
+        <a class="nav-item" href="dashboard.html">Dashboard</a>
+        <a class="nav-item" href="login.html">Login</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- DASHBOARD HERO -->
+  <section class="section" style="padding:48px 0;">
+    <div class="container">
+      <h1 class="section-title">Dashboard Overview</h1>
+      <p style="color:var(--muted)">This dashboard shows analytics and recent activity for your AI tools usage.</p>
+    </div>
+  </section>
+
+  <!-- ANALYTICS CARDS -->
+  <section class="section" style="padding:24px 0;">
+    <div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
+      <div class="card glass">
+        <h3>Total Users</h3>
+        <p class="big-number">1,245</p>
+      </div>
+      <div class="card glass">
+        <h3>AI Tasks Processed</h3>
+        <p class="big-number">8,732</p>
+      </div>
+      <div class="card glass">
+        <h3>Revenue</h3>
+        <p class="big-number">$12,450</p>
+      </div>
+      <div class="card glass">
+        <h3>Active Subscriptions</h3>
+        <p class="big-number">347</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARTS -->
+  <section class="section" style="padding:24px 0;">
+    <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <div class="card glass">
+        <h3>Monthly AI Tasks</h3>
+        <canvas id="tasksChart"></canvas>
+      </div>
+      <div class="card glass">
+        <h3>Revenue Overview</h3>
+        <canvas id="revenueChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT ACTIVITY TABLE -->
+ <section class="section">
+  <div class="container">
+    <h2 style="margin-bottom:24px;">Recent Activities</h2>
+    
+    <div class="card glass" style="overflow-x:auto; padding:16px;">
+      <table style="width:100%; border-collapse:collapse; min-width:600px;">
+        <thead>
+          <tr style="text-align:left; border-bottom: 2px solid rgba(255,255,255,0.2);">
+            <th style="padding:12px;">Date</th>
+            <th style="padding:12px;">Activity</th>
+            <th style="padding:12px;">Status</th>
+            <th style="padding:12px;">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+            <td style="padding:12px;">2025-11-25</td>
+            <td style="padding:12px;">Uploaded Dataset</td>
+            <td style="padding:12px;"><span style="color:#00FF9F;">Completed</span></td>
+            <td style="padding:12px;"><a href="404.html" onclick="redirect404(event)" style="color:#8A00D4; text-decoration:none;">View</a></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+            <td style="padding:12px;">2025-11-24</td>
+            <td style="padding:12px;">Generated AI Report</td>
+            <td style="padding:12px;"><span style="color:#FF6B6B;">Failed</span></td>
+            <td style="padding:12px;"><a href="404.html" onclick="redirect404(event)" style="color:#8A00D4; text-decoration:none;">View</a></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+            <td style="padding:12px;">2025-11-23</td>
+            <td style="padding:12px;">Automated Task Run</td>
+            <td style="padding:12px;"><span style="color:#00FF9F;">Completed</span></td>
+            <td style="padding:12px;"><a href="404.html" onclick="redirect404(event)" style="color:#8A00D4; text-decoration:none;">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+  <div class="footer-inner container">
+    <!-- About / Logo -->
+    <div class="footer-about">
+      <a class="brand" href="index.html">
+         <img class="logo-svg" src="assets/images/logoimg.webp" alt="Stackly AI Logo" width="40" height="40"    >
+        <span class="brand-text">Stackly AI</span>
+      </a>
+      <p class="footer-desc">AI SaaS platform providing multiple AI tools for creators, teams and enterprises. Build, automate, and analyze smarter.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul class="footer-nav">
+        <li><a href="about.html" onclick="redirect404(event)">About Us</a></li>
+        <li><a href="services.html" onclick="redirect404(event)">Services</a></li>
+        <li><a href="blog.html" onclick="redirect404(event)">Blog</a></li>
+        <li><a href="dashboard.html" onclick="redirect404(event)">Dashboard</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📍 Bangalore, Karnataka</p>
+      <p>✉ <a href="mailto:contact@stackly.ai" onclick="redirect404(event)">contact@stackly.ai</a></p>
+      <p>📞 +91 98765 43210</p>
+      <!-- Map -->
+      <a href="https://www.google.com/maps/place/Bangalore,+Karnataka" target="_blank">
+        <iframe src="https://www.google.com/maps?q=Bangalore,+Karnataka&output=embed"></iframe>
+      </a>
+    </div>
+
+    <!-- Follow Us -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-row">
+        <a href="404.html" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-twitter"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>Email: <a href="mailto:contact@stackly.ai" onclick="redirect404(event)">contact@stackly.ai</a> &copy; 2025 Stackly AI. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script>
+    const ctxTasks = document.getElementById('tasksChart').getContext('2d');
+    const tasksChart = new Chart(ctxTasks, {
+      type: 'line',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets: [{
+          label: 'Tasks',
+          data: [1200, 1500, 1300, 1800, 1700, 1900],
+          borderColor: '#8A00D4',
+          backgroundColor: 'rgba(138,0,212,0.2)',
+          tension:0.3,
+          fill:true
+        }]
+      },
+      options: { responsive:true, plugins:{legend:{display:false}} }
+    });
+
+    const ctxRevenue = document.getElementById('revenueChart').getContext('2d');
+    const revenueChart = new Chart(ctxRevenue, {
+      type: 'bar',
+      data: {
+        labels: ['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets:[{
+          label:'Revenue',
+          data:[1200,1500,1300,1800,1700,1900],
+          backgroundColor:'#0061FF'
+        }]
+      },
+      options:{ responsive:true, plugins:{legend:{display:false}} }
+    });
+  </script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

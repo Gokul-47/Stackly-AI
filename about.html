@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stackly AI — About Us</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+      gap: 16px;
+      text-align: center;
+    }
+
+    .team-card {
+      background: rgba(255,255,255,0.05);
+      padding: 16px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .team-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 12px;
+    }
+
+    .section-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    .section-content h2 {
+      margin-bottom: 16px;
+    }
+
+    .section-content p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <!-- Inline simple SVG logo: brain + text -->
+        <img class="logo-svg" src="assets/images/logoimg.webp" alt="Stackly AI Logo" width="40" height="40"    >
+        <span class="brand-text">Stackly AI</span>
+      </a>
+
+      <nav class="nav" id="navLinks">
+        <div class="nav-item dropdown">
+          <a href="index.html" class="drop-btn">Home</a>
+          <div class="dropdown-content">
+            <a href="home2.html">Home2</a>
+          </div>
+        </div>
+        <a class="nav-item" href="about.html">About</a>
+        <a class="nav-item" href="services.html">Services</a>
+        <a class="nav-item" href="blog.html">Blog</a>
+        <a class="nav-item" href="dashboard.html">Dashboard</a>
+        <a class="nav-item" href="login.html">Login</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" style="padding:64px 0;text-align:center;">
+    <div class="container">
+      <h1 class="hero-title">About Stackly AI</h1>
+      <p class="hero-sub">We are building cutting-edge AI tools to empower creators, teams, and enterprises.</p>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="section" style="background: rgba(138,0,212,0.05);">
+    <div class="section-content">
+      <h2>Our Mission</h2>
+      <p>To democratize AI technology, making it accessible for all businesses and creators. We focus on automation, analytics, and creative tools to drive productivity and innovation.</p>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section class="section">
+    <div class="section-content">
+      <h2>Our Vision</h2>
+      <p>To be the go-to AI platform for innovative solutions across industries, helping teams and individuals achieve more with AI.</p>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section" style="background: rgba(138,0,212,0.05);">
+    <div class="section-content">
+      <h2>Our Values</h2>
+      <p>Innovation, Transparency, Collaboration, and Customer-Centric Design guide every decision at Stackly AI.</p>
+    </div>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="section">
+    <div class="section-content">
+      <h2>Our Journey</h2>
+      <p>Founded in 2022, Stackly AI has rapidly grown from a small startup to a trusted AI platform serving hundreds of clients worldwide. Our journey is marked by innovation, dedication, and a passion for AI-driven solutions.</p>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section class="section" style="background: rgba(138,0,212,0.05);">
+    <div class="section-content">
+      <h2>Achievements</h2>
+      <p>✔ Over 10,000 AI tasks processed monthly<br>
+         ✔ Trusted by 300+ businesses<br>
+         ✔ Featured in AI Tech Magazine</p>
+    </div>
+  </section>
+
+  <!-- OUR TEAM -->
+  <section class="section">
+    <div class="section-content">
+      <h2>Our Team</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="assets/images/jane doe.jpeg" alt="Jane Doe">
+          <h3>Jane Doe</h3>
+          <p>CEO & Co-Founder</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/images/john smith.jpeg" alt="John Smith">
+          <h3>John Smith</h3>
+          <p>CTO & AI Lead</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/images/emily wong.jpeg" alt="Emily Wong">
+          <h3>Emily Wong</h3>
+          <p>Product Manager</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/images/alex kumar.jpeg" alt="Alex Kumar">
+          <h3>Alex Kumar</h3>
+          <p>Lead Developer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+  <div class="footer-inner container">
+    <!-- About / Logo -->
+    <div class="footer-about">
+      <a class="brand" href="index.html">
+        <img class="logo-svg" src="assets/images/logoimg.webp" alt="Stackly AI Logo" width="40" height="40"    >
+        <span class="brand-text">Stackly AI</span>
+      </a>
+      <p class="footer-desc">AI SaaS platform providing multiple AI tools for creators, teams and enterprises. Build, automate, and analyze smarter.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul class="footer-nav">
+        <li><a href="about.html" onclick="redirect404(event)">About Us</a></li>
+        <li><a href="services.html" onclick="redirect404(event)">Services</a></li>
+        <li><a href="blog.html" onclick="redirect404(event)">Blog</a></li>
+        <li><a href="dashboard.html" onclick="redirect404(event)">Dashboard</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📍 Bangalore, Karnataka</p>
+      <p>✉ <a href="mailto:contact@stackly.ai" onclick="redirect404(event)">contact@stackly.ai</a></p>
+      <p>📞 +91 98765 43210</p>
+      <!-- Map -->
+      <a href="https://www.google.com/maps/place/Bangalore,+Karnataka" target="_blank">
+        <iframe src="https://www.google.com/maps?q=Bangalore,+Karnataka&output=embed"></iframe>
+      </a>
+    </div>
+
+    <!-- Follow Us -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-row">
+        <a href="404.html" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-twitter"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>Email: <a href="mailto:contact@stackly.ai" onclick="redirect404(event)">contact@stackly.ai</a> &copy; 2025 Stackly AI. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>

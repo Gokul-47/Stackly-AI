@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stackly AI — Login / Signup</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Extra styles for login/signup layout */
+    .auth-container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 48px 24px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .auth-tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+      gap: 24px;
+    }
+
+    .auth-tab {
+      cursor: pointer;
+      font-weight: 600;
+      padding-bottom: 4px;
+      color: var(--muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+    }
+
+    .auth-tab.active {
+      color: var(--accent1);
+      border-bottom-color: var(--accent1);
+    }
+
+    .auth-form {
+      display: none;
+      text-align: left;
+    }
+
+    .auth-form.active {
+      display: block;
+    }
+
+    .auth-form label {
+      display: block;
+      margin: 12px 0 4px;
+    }
+
+    .auth-form input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+
+    .auth-form button {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .auth-footer {
+      text-align: center;
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .auth-footer a {
+      color: var(--accent1);
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <!-- Inline simple SVG logo: brain + text -->
+         <img class="logo-svg" src="assets/images/logoimg.webp" alt="Stackly AI Logo" width="40" height="40"    >
+        <span class="brand-text">Stackly AI</span>
+      </a>
+
+      <nav class="nav" id="navLinks">
+        <div class="nav-item dropdown">
+          <a href="index.html" class="drop-btn">Home</a>
+          <div class="dropdown-content">
+            <a href="home2.html">Home2</a>
+          </div>
+        </div>
+        <a class="nav-item" href="about.html">About</a>
+        <a class="nav-item" href="services.html">Services</a>
+        <a class="nav-item" href="blog.html">Blog</a>
+        <a class="nav-item" href="dashboard.html">Dashboard</a>
+        <a class="nav-item" href="login.html">Login</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+
+  <section class="section" style="padding:80px 0;text-align:center;">
+    <div class="container">
+      <div class="auth-container">
+        <h1 style="margin-bottom:16px;">Welcome</h1>
+        <div class="auth-tabs">
+          <div class="auth-tab active" id="loginTab">Login</div>
+          <div class="auth-tab" id="signupTab">Sign Up</div>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form class="auth-form active" id="loginForm" onsubmit="redirect404(event)">
+          <label>Email</label>
+          <input type="email" placeholder="you@example.com" required>
+
+          <label>Password</label>
+          <input type="password" placeholder="********" required>
+
+          <button type="submit" class="btn primary">Login</button>
+        </form>
+
+        <!-- SIGNUP FORM -->
+        <form class="auth-form" id="signupForm" onsubmit="redirect404(event)">
+          <label>Full Name</label>
+          <input type="text" placeholder="John Doe" required>
+
+          <label>Email</label>
+          <input type="email" placeholder="you@example.com" required>
+
+          <label>Password</label>
+          <input type="password" placeholder="********" required>
+
+          <label>Confirm Password</label>
+          <input type="password" placeholder="********" required>
+
+          <button type="submit" class="btn primary">Sign Up</button>
+        </form>
+
+        <div class="auth-footer">
+          Forgot password? <a href="404.html" onclick="redirect404(event)">Click here</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+  <div class="footer-inner container">
+    <!-- About / Logo -->
+    <div class="footer-about">
+      <a class="brand" href="index.html">
+         <img class="logo-svg" src="assets/images/logoimg.webp" alt="Stackly AI Logo" width="40" height="40"    >
+        <span class="brand-text">Stackly AI</span>
+      </a>
+      <p class="footer-desc">AI SaaS platform providing multiple AI tools for creators, teams and enterprises. Build, automate, and analyze smarter.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul class="footer-nav">
+        <li><a href="about.html" onclick="redirect404(event)">About Us</a></li>
+        <li><a href="services.html" onclick="redirect404(event)">Services</a></li>
+        <li><a href="blog.html" onclick="redirect404(event)">Blog</a></li>
+        <li><a href="dashboard.html" onclick="redirect404(event)">Dashboard</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📍 Bangalore, Karnataka</p>
+      <p>✉ <a href="mailto:contact@stackly.ai" onclick="redirect404(event)">contact@stackly.ai</a></p>
+      <p>📞 +91 98765 43210</p>
+      <!-- Map -->
+      <a href="https://www.google.com/maps/place/Bangalore,+Karnataka" target="_blank">
+        <iframe src="https://www.google.com/maps?q=Bangalore,+Karnataka&output=embed"></iframe>
+      </a>
+    </div>
+
+    <!-- Follow Us -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-row">
+        <a href="404.html" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-twitter"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>Email: <a href="mailto:contact@stackly.ai" onclick="redirect404(event)">contact@stackly.ai</a> &copy; 2025 Stackly AI. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script>
+    // Switch between login and signup forms
+    const loginTab = document.getElementById('loginTab');
+    const signupTab = document.getElementById('signupTab');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+
+    loginTab.addEventListener('click', () => {
+      loginTab.classList.add('active');
+      signupTab.classList.remove('active');
+      loginForm.classList.add('active');
+      signupForm.classList.remove('active');
+    });
+
+    signupTab.addEventListener('click', () => {
+      signupTab.classList.add('active');
+      loginTab.classList.remove('active');
+      signupForm.classList.add('active');
+      loginForm.classList.remove('active');
+    });
+
+    function redirect404(e){
+      if(e) e.preventDefault();
+      window.location.href = "404.html";
+    }
+  </script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

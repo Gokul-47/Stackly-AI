@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stackly AI — Home</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta name="description" content="Stackly AI — AI SaaS platform with multiple tools: image generation, chatbots, analytics, automation." />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <!-- Inline simple SVG logo: brain + text -->
+        <img class="logo-svg" src="assets/images/logoimg.webp" alt="Stackly AI Logo" width="40" height="40"    >
+        <span class="brand-text">Stackly AI</span>
+      </a>
+
+      <nav class="nav" id="navLinks">
+        <div class="nav-item dropdown">
+          <a href="index.html" class="drop-btn">Home</a>
+          <div class="dropdown-content">
+            <a href="home2.html">Company</a>
+          </div>
+        </div>
+        <a class="nav-item" href="about.html">About</a>
+        <a class="nav-item" href="services.html">Services</a>
+        <a class="nav-item" href="blog.html">Blog</a>
+        <a class="nav-item" href="dashboard.html">Dashboard</a>
+        <a class="nav-item" href="login.html">Login</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1 class="hero-title">AI SaaS platform that puts powerful tools in your stack</h1>
+          <p class="hero-sub">Stackly AI delivers image generation, conversational assistants, coding helpers and analytics — all production-ready and secure.</p>
+
+          <div class="hero-ctas">
+            <a href="services.html" class="btn primary">Explore Services</a>
+            <a href="#pricing" class="btn ghost">See Plans</a>
+          </div>
+
+          <ul class="quick-features">
+            <li><i class="fa-solid fa-gear"></i> Production-grade APIs</li>
+            <li><i class="fa-solid fa-shield-halved"></i> Enterprise security</li>
+            <li><i class="fa-solid fa-chart-simple"></i> Built-in analytics</li>
+          </ul>
+        </div>
+
+        <div class="hero-right">
+          <!-- AI brain circuit illustration (SVG) -->
+          <svg class="hero-illustration" viewBox="0 0 600 400" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="lg" x1="0" x2="1">
+                <stop offset="0" stop-color="#8A00D4"/>
+                <stop offset="1" stop-color="#0061FF"/>
+              </linearGradient>
+              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="12" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <!-- circuit brain circle -->
+            <g transform="translate(60,40)">
+              <circle cx="220" cy="160" r="110" fill="url(#lg)" opacity="0.12" />
+              <g stroke="#9fd7ff" stroke-width="2" fill="none">
+                <!-- simplified circuit lines -->
+                <path d="M160 120 C 180 95, 210 80, 250 80" stroke-opacity="0.9"/>
+                <path d="M280 160 L330 120" stroke-opacity="0.9"/>
+                <path d="M200 200 L260 240" stroke-opacity="0.9"/>
+                <circle cx="250" cy="110" r="6" fill="#fff" stroke="none"/>
+                <circle cx="320" cy="150" r="6" fill="#fff" stroke="none"/>
+                <circle cx="220" cy="220" r="6" fill="#fff" stroke="none"/>
+                <circle cx="170" cy="150" r="6" fill="#fff" stroke="none"/>
+              </g>
+
+              <!-- core brain lines -->
+              <g stroke="url(#lg)" stroke-width="3" stroke-linecap="round" filter="url(#glow)">
+                <path d="M200 140 C220 110, 270 110, 290 140" fill="none" />
+                <path d="M210 160 C230 190, 280 190, 300 160" fill="none" />
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" style="padding:48px 0;background: rgba(138,0,212,0.05);">
+  <div class="container">
+    <h2 class="section-title">Featured Tools</h2>
+    <p class="section-sub">Explore our cutting-edge AI tools designed to boost productivity and creativity.</p>
+
+    <div class="cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:32px;">
+      
+      <!-- Chat AI -->
+      <div class="card glass" style="text-align:center;padding:24px;">
+        <svg width="80" height="80" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="30" stroke="#8A00D4" stroke-width="4"/>
+          <path d="M20 28H44M20 36H36" stroke="#8A00D4" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <h3 style="margin-top:16px;">Chat AI</h3>
+        <p style="color:var(--muted)">Conversational AI to automate responses and support.</p>
+      </div>
+
+      <!-- Image Generator -->
+      <div class="card glass" style="text-align:center;padding:24px;">
+        <svg width="80" height="80" viewBox="0 0 64 64" fill="none">
+          <rect x="8" y="16" width="48" height="32" rx="4" stroke="#0061FF" stroke-width="4"/>
+          <circle cx="20" cy="28" r="4" fill="#0061FF"/>
+          <path d="M8 48L24 32L40 48H56" stroke="#0061FF" stroke-width="4"/>
+        </svg>
+        <h3 style="margin-top:16px;">Image Generator</h3>
+        <p style="color:var(--muted)">Create stunning images and graphics with AI.</p>
+      </div>
+
+      <!-- Data Analytics -->
+      <div class="card glass" style="text-align:center;padding:24px;">
+        <svg width="80" height="80" viewBox="0 0 64 64" fill="none">
+          <rect x="12" y="28" width="8" height="24" fill="#8A00D4"/>
+          <rect x="28" y="20" width="8" height="32" fill="#8A00D4"/>
+          <rect x="44" y="12" width="8" height="40" fill="#8A00D4"/>
+        </svg>
+        <h3 style="margin-top:16px;">Data Analytics</h3>
+        <p style="color:var(--muted)">Visualize and analyze your data quickly with AI insights.</p>
+      </div>
+
+      <!-- Automation Tools -->
+      <div class="card glass" style="text-align:center;padding:24px;">
+        <svg width="80" height="80" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="30" stroke="#0061FF" stroke-width="4"/>
+          <path d="M32 12V32L44 40" stroke="#0061FF" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <h3 style="margin-top:16px;">Automation</h3>
+        <p style="color:var(--muted)">Automate repetitive tasks and workflows effortlessly.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- PRICING -->
+    <section class="section pricing" id="pricing">
+      <div class="container">
+        <h2 class="section-title">Subscription Plans</h2>
+        <div class="price-grid">
+          <div class="price-card glass">
+            <h3>Starter</h3>
+            <div class="price-amt"><span class="big">$9</span><span class="per">/mo</span></div>
+            <ul class="features-list">
+              <li>1,000 credits</li>
+              <li>Email support</li>
+              <li>Core tools</li>
+            </ul>
+            <a href="checkout.html" class="btn primary" onclick="prefillCheckout('Starter',9)">Buy</a>
+          </div>
+
+          <div class="price-card glass featured">
+            <h3>Professional</h3>
+            <div class="price-amt"><span class="big">$29</span><span class="per">/mo</span></div>
+            <ul class="features-list">
+              <li>10,000 credits</li>
+              <li>Priority support</li>
+              <li>All tools</li>
+            </ul>
+            <a href="checkout.html" class="btn primary" onclick="prefillCheckout('Pro',29)">Buy</a>
+          </div>
+
+          <div class="price-card glass">
+            <h3>Enterprise</h3>
+            <div class="price-amt"><span class="big">Contact</span></div>
+            <ul class="features-list">
+              <li>Custom pricing</li>
+              <li>Dedicated support</li>
+              <li>On-prem options</li>
+            </ul>
+            <a href="404.html" class="btn ghost" onclick="redirect404(event)">Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials">
+      <div class="container">
+        <h2 class="section-title">What customers say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p>“Stackly AI helped us automate core workflows and improve response time dramatically.”</p>
+            <cite>— R. Sharma, Product Lead</cite>
+          </div>
+          <div class="testimonial-card">
+            <p>“The image outputs are superb — saved our design team hours.”</p>
+            <cite>— L. Gomez, Creative Director</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+      <div class="container cta-inner">
+        <div>
+          <h3>Ready to get started?</h3>
+          <p>Start a free trial or request an enterprise demo.</p>
+        </div>
+        <div>
+          <a href="signup.html" class="btn primary" onclick="redirect404(event)">Start Free Trial</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ <!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner container">
+    <!-- About / Logo -->
+    <div class="footer-about">
+      <a class="brand" href="index.html">
+       <img class="logo-svg" src="assets/images/logoimg.webp" alt="Stackly AI Logo" width="40" height="40"    >
+        <span class="brand-text">Stackly AI</span>
+      </a>
+      <p class="footer-desc">AI SaaS platform providing multiple AI tools for creators, teams and enterprises. Build, automate, and analyze smarter.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul class="footer-nav">
+        <li><a href="about.html" onclick="redirect404(event)">About Us</a></li>
+        <li><a href="services.html" onclick="redirect404(event)">Services</a></li>
+        <li><a href="blog.html" onclick="redirect404(event)">Blog</a></li>
+        <li><a href="dashboard.html" onclick="redirect404(event)">Dashboard</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📍 Bangalore, Karnataka</p>
+      <p>✉ <a href="mailto:contact@stackly.ai" onclick="redirect404(event)">contact@stackly.ai</a></p>
+      <p>📞 +91 98765 43210</p>
+      <!-- Map -->
+      <a href="https://www.google.com/maps/place/Bangalore,+Karnataka" target="_blank">
+        <iframe src="https://www.google.com/maps?q=Bangalore,+Karnataka&output=embed"></iframe>
+      </a>
+    </div>
+
+    <!-- Follow Us -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-row">
+        <a href="404.html" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-twitter"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>Email: <a href="mailto:contact@stackly.ai" onclick="redirect404(event)">contact@stackly.ai</a> &copy; 2025 Stackly AI. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

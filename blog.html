@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stackly AI — Blog</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAV -->
+   <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <!-- Inline simple SVG logo: brain + text -->
+        <img class="logo-svg" src="assets/images/logoimg.webp" alt="Stackly AI Logo" width="40" height="40"    >
+        <span class="brand-text">Stackly AI</span>
+      </a>
+
+      <nav class="nav" id="navLinks">
+        <div class="nav-item dropdown">
+          <a href="index.html" class="drop-btn">Home</a>
+          <div class="dropdown-content">
+            <a href="home2.html">Home2</a>
+          </div>
+        </div>
+        <a class="nav-item" href="about.html">About</a>
+        <a class="nav-item" href="services.html">Services</a>
+        <a class="nav-item" href="blog.html">Blog</a>
+        <a class="nav-item" href="dashboard.html">Dashboard</a>
+        <a class="nav-item" href="login.html">Login</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+  <!-- HERO -->
+  <section class="hero" style="padding:64px 0;text-align:center;">
+    <div class="container">
+      <h1 class="hero-title">Blog & Insights</h1>
+      <p class="hero-sub">Latest news, tutorials, and updates from Stackly AI.</p>
+    </div>
+  </section>
+
+  <!-- LATEST ARTICLES -->
+  <section class="section">
+    <div class="container">
+      <h2 style="margin-bottom:24px;">Latest Articles</h2>
+      <div class="cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        <div class="card glass">
+          <h3>How AI is Transforming Businesses</h3>
+          <p>Discover the ways AI can streamline operations and improve decision-making across industries.</p>
+          <a href="404.html" class="btn small" onclick="redirect404(event)">Read More</a>
+        </div>
+        <div class="card glass">
+          <h3>Top 5 AI Tools for Creators</h3>
+          <p>Boost your creativity with AI tools for design, writing, and content generation.</p>
+          <a href="404.html" class="btn small" onclick="redirect404(event)">Read More</a>
+        </div>
+        <div class="card glass">
+          <h3>Data Analytics with AI</h3>
+          <p>Learn how AI-powered analytics can provide actionable insights for businesses.</p>
+          <a href="404.html" class="btn small" onclick="redirect404(event)">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TUTORIALS & GUIDES -->
+  <section class="section" style="background: rgba(138,0,212,0.05);">
+    <div class="container">
+      <h2 style="margin-bottom:24px;">Tutorials & Guides</h2>
+      <div class="cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        <div class="card glass">
+          <h3>Getting Started with Stackly AI</h3>
+          <p>A step-by-step guide to integrate our AI tools into your workflow efficiently.</p>
+          <a href="404.html" class="btn small" onclick="redirect404(event)">Read More</a>
+        </div>
+        <div class="card glass">
+          <h3>AI for Content Creation</h3>
+          <p>Learn how to generate blog posts, images, and videos using AI tools.</p>
+          <a href="404.html" class="btn small" onclick="redirect404(event)">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRY INSIGHTS -->
+  <section class="section">
+    <div class="container">
+      <h2 style="margin-bottom:24px;">Industry Insights</h2>
+      <div class="cards" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        <div class="card glass">
+          <h3>AI Trends 2025</h3>
+          <p>Explore the emerging AI trends that are shaping the future of technology and business.</p>
+          <a href="404.html" class="btn small" onclick="redirect404(event)">Read More</a>
+        </div>
+        <div class="card glass">
+          <h3>AI Ethics and Responsibility</h3>
+          <p>Understanding ethical considerations while implementing AI solutions in your organization.</p>
+          <a href="404.html" class="btn small" onclick="redirect404(event)">Read More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSCRIBE NEWSLETTER -->
+<!-- SUBSCRIBE NEWSLETTER -->
+<section class="section" style="background: rgba(0,97,255,0.05);text-align:center;padding:48px 16px;">
+  <div class="container">
+    <h2 style="margin-bottom:16px;">Stay Updated</h2>
+    <p style="color:var(--muted);margin-bottom:32px;">Subscribe to our newsletter to get the latest updates about Stackly AI tools and articles.</p>
+
+    <form class="newsletter-form" onsubmit="redirect404(event)" style="max-width:500px;margin:0 auto; display:flex; gap:12px; flex-wrap:wrap;">
+      <input type="email" placeholder="Enter your email" required style="flex:1; min-width:200px; padding:12px 16px; border-radius:12px; border:none; background: rgba(255,255,255,0.1); color:#fff; font-size:16px;">
+      <button type="submit" class="btn primary" style="padding:12px 24px; border-radius:12px; font-size:16px;">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+  <div class="footer-inner container">
+    <!-- About / Logo -->
+    <div class="footer-about">
+      <a class="brand" href="index.html">
+        <img class="logo-svg" src="assets/images/logoimg.webp" alt="Stackly AI Logo" width="40" height="40"    >
+        <span class="brand-text">Stackly AI</span>
+      </a>
+      <p class="footer-desc">AI SaaS platform providing multiple AI tools for creators, teams and enterprises. Build, automate, and analyze smarter.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul class="footer-nav">
+        <li><a href="about.html" onclick="redirect404(event)">About Us</a></li>
+        <li><a href="services.html" onclick="redirect404(event)">Services</a></li>
+        <li><a href="blog.html" onclick="redirect404(event)">Blog</a></li>
+        <li><a href="dashboard.html" onclick="redirect404(event)">Dashboard</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>📍 Bangalore, Karnataka</p>
+      <p>✉ <a href="mailto:contact@stackly.ai" onclick="redirect404(event)">contact@stackly.ai</a></p>
+      <p>📞 +91 98765 43210</p>
+      <!-- Map -->
+      <a href="https://www.google.com/maps/place/Bangalore,+Karnataka" target="_blank">
+        <iframe src="https://www.google.com/maps?q=Bangalore,+Karnataka&output=embed"></iframe>
+      </a>
+    </div>
+
+    <!-- Follow Us -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-row">
+        <a href="404.html" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-twitter"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="404.html" class="social-btn"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <p>Email: <a href="mailto:contact@stackly.ai" onclick="redirect404(event)">contact@stackly.ai</a> &copy; 2025 Stackly AI. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script>
+    function redirect404(e){
+      if(e) e.preventDefault();
+      window.location.href = "404.html";
+    }
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>
