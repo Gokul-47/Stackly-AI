@@ -83,3 +83,33 @@ if(statsEl){
   }, { threshold: 0.5 });
   observer.observe(statsEl);
 }
+
+
+// Dropdown click toggle
+document.querySelectorAll('.drop-btn').forEach(btn => {
+  let clickedOnce = false; // track first click
+
+  btn.addEventListener('click', function(e){
+    e.preventDefault(); // prevent default navigation
+    const dropdown = btn.nextElementSibling; // the dropdown-content div
+
+    if(!clickedOnce){
+      // First click: show dropdown
+      if(dropdown) dropdown.style.display = 'block';
+      clickedOnce = true;
+
+      // Close dropdown if user clicks outside
+      document.addEventListener('click', function handler(ev){
+        if(!btn.contains(ev.target) && !dropdown.contains(ev.target)){
+          dropdown.style.display = 'none';
+          clickedOnce = false;
+          document.removeEventListener('click', handler);
+        }
+      });
+
+    } else {
+      // Second click: navigate
+      window.location.href = btn.href;
+    }
+  });
+});
