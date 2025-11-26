@@ -14,11 +14,12 @@
 })();
 
 // PREFILL CHECKOUT
-function prefillCheckout(name, price){
+function prefillCheckout(plan, price){
   try {
-    sessionStorage.setItem('checkout_item', name);
-    sessionStorage.setItem('checkout_price', price);
-  } catch(e) { /* ignore */ }
+    localStorage.setItem("checkoutPlan", plan);
+    localStorage.setItem("checkoutPrice", price);
+    window.location.href = "checkout.html";
+  } catch(e){ console.warn(e); }
 }
 
 // REDIRECT TO 404 (demo)
@@ -35,24 +36,50 @@ function redirect404(e){
       if(en.isIntersecting){
         en.target.style.opacity = 1;
         en.target.style.transform = 'none';
+        obs.unobserve(en.target);
       }
     });
   }, {threshold:0.12});
+
   els.forEach(el=>{
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(16px)';
-    el.style.transition = 'all .7s cubic-bezier(.2,.9,.2,1)';
-    obs.observe(el);
+    if(el instanceof Element){
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'all .7s cubic-bezier(.2,.9,.2,1)';
+      obs.observe(el);
+    }
   });
 })();
-function redirect404(e){
-  if(e) e.preventDefault();
-  window.location.href = "404.html";
+
+// COUNTER ANIMATION
+const counters = document.querySelectorAll(".num");
+let started = false;
+
+function startCounter() {
+  counters.forEach(el => {
+    let start = 0;
+    let end = parseInt(el.getAttribute("data-val"));
+    const increment = Math.ceil(end / 100);
+    const counter = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        el.textContent = end;
+        clearInterval(counter);
+      } else el.textContent = start;
+    }, 20);
+  });
 }
 
-// Optional: prefill checkout plan (used from subscription cards)
-function prefillCheckout(plan, price){
-  localStorage.setItem("checkoutPlan", plan);
-  localStorage.setItem("checkoutPrice", price);
-  window.location.href = "checkout.html";
+const statsEl = document.querySelector(".stats");
+if(statsEl){
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !started) {
+        startCounter();
+        started = true;
+        observer.unobserve(statsEl);
+      }
+    });
+  }, { threshold: 0.5 });
+  observer.observe(statsEl);
 }
