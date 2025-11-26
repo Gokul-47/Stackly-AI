@@ -8,6 +8,32 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+<style>
+  /* Dashboard Stats Graph Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 0 4px;
+}
+
+/* Responsive for graphs */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid .card {
+    width: 100%;
+  }
+
+  canvas {
+    max-width: 100%;
+    height: auto !important;
+  }
+}
+
+</style>
 <body>
 
   <!-- NAV -->
@@ -66,58 +92,71 @@
   </section>
 
   <!-- CHARTS -->
-  <section class="section" style="padding:24px 0;">
-    <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-      <div class="card glass">
-        <h3>Monthly AI Tasks</h3>
-        <canvas id="tasksChart"></canvas>
-      </div>
-      <div class="card glass">
-        <h3>Revenue Overview</h3>
-        <canvas id="revenueChart"></canvas>
-      </div>
+ <section class="section stats-section">
+  <div class="container stats-grid">
+    <div class="card glass">
+      <h3>Monthly AI Tasks</h3>
+      <canvas id="tasksChart"></canvas>
     </div>
-  </section>
 
-  <!-- RECENT ACTIVITY TABLE -->
- <section class="section">
-  <div class="container">
-    <h2 style="margin-bottom:24px;">Recent Activities</h2>
-    
-    <div class="card glass" style="overflow-x:auto; padding:16px;">
-      <table style="width:100%; border-collapse:collapse; min-width:600px;">
-        <thead>
-          <tr style="text-align:left; border-bottom: 2px solid rgba(255,255,255,0.2);">
-            <th style="padding:12px;">Date</th>
-            <th style="padding:12px;">Activity</th>
-            <th style="padding:12px;">Status</th>
-            <th style="padding:12px;">Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
-            <td style="padding:12px;">2025-11-25</td>
-            <td style="padding:12px;">Uploaded Dataset</td>
-            <td style="padding:12px;"><span style="color:#00FF9F;">Completed</span></td>
-            <td style="padding:12px;"><a href="404.html" onclick="redirect404(event)" style="color:#8A00D4; text-decoration:none;">View</a></td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
-            <td style="padding:12px;">2025-11-24</td>
-            <td style="padding:12px;">Generated AI Report</td>
-            <td style="padding:12px;"><span style="color:#FF6B6B;">Failed</span></td>
-            <td style="padding:12px;"><a href="404.html" onclick="redirect404(event)" style="color:#8A00D4; text-decoration:none;">View</a></td>
-          </tr>
-          <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
-            <td style="padding:12px;">2025-11-23</td>
-            <td style="padding:12px;">Automated Task Run</td>
-            <td style="padding:12px;"><span style="color:#00FF9F;">Completed</span></td>
-            <td style="padding:12px;"><a href="404.html" onclick="redirect404(event)" style="color:#8A00D4; text-decoration:none;">View</a></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="card glass">
+      <h3>Revenue Overview</h3>
+      <canvas id="revenueChart"></canvas>
     </div>
   </div>
 </section>
+
+
+ 
+<!-- RECENT ACTIVITY TABLE -->
+<section class="section" style="padding:40px 0;">
+  <div class="container">
+    <h2 style="margin-bottom:24px; color:var(--text);">Recent Activities</h2>
+    <div class="card glass" style="padding:0; overflow:hidden;">
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Activity</th>
+              <th>Status</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Date" class="status-date"><span>2025-11-25</span></td>
+              <td data-label="Activity" class="status-activity"><span>Uploaded Dataset</span></td>
+              <td data-label="Status"><span class="status-completed">Completed</span></td>
+              <td data-label="Details"><a href="404.html" onclick="redirect404(event)">View</a></td>
+            </tr>
+            <tr>
+              <td data-label="Date"><span>2025-11-24</span></td>
+              <td data-label="Activity"><span>Generated AI Report</span></td>
+              <td data-label="Status"><span class="status-failed">Failed</span></td>
+              <td data-label="Details"><a href="404.html" onclick="redirect404(event)">View</a></td>
+            </tr>
+            <tr>
+              <td data-label="Date"><span>2025-11-23</span></td>
+              <td data-label="Activity"><span>Automated Task Run</span></td>
+              <td data-label="Status"><span class="status-completed">Completed</span></td>
+              <td data-label="Details"><a href="404.html" onclick="redirect404(event)">View</a></td>
+            </tr>
+            <tr>
+              <td data-label="Date"><span>2025-11-22</span></td>
+              <td data-label="Activity"><span>Image Generation</span></td>
+              <td data-label="Status"><span class="status-pending">Pending</span></td>
+              <td data-label="Details"><a href="404.html" onclick="redirect404(event)">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  
 
   <!-- FOOTER -->
   <footer class="site-footer">
@@ -135,10 +174,10 @@
     <div class="footer-links">
       <h4>Quick Links</h4>
       <ul class="footer-nav">
-        <li><a href="about.html" onclick="redirect404(event)">About Us</a></li>
-        <li><a href="services.html" onclick="redirect404(event)">Services</a></li>
-        <li><a href="blog.html" onclick="redirect404(event)">Blog</a></li>
-        <li><a href="dashboard.html" onclick="redirect404(event)">Dashboard</a></li>
+        <li><a href="about.html" >About Us</a></li>
+        <li><a href="services.html" >Services</a></li>
+        <li><a href="blog.html" >Blog</a></li>
+        <li><a href="dashboard.html" >Dashboard</a></li>
       </ul>
     </div>
 
