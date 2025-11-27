@@ -242,7 +242,7 @@ body{
 
 /* SECTIONS */
 .section{
-  padding:60px 0;
+  padding:20px 0;
 }
 
 .section-title{
@@ -390,9 +390,9 @@ body{
 /* CTA SECTION */
 .cta-section{
   background:linear-gradient(90deg, rgba(10,8,25,0.6), rgba(6,10,25,0.6));
-  padding:40px 0;
+  padding:20px 0;
   border-radius:12px;
-  margin:40px 0;
+  margin:20px 0;
 }
 
 .cta-inner{
