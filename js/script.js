@@ -9,9 +9,13 @@
       const isShown = nav.style.display === 'flex';
       nav.style.display = isShown ? 'none' : 'flex';
       nav.style.flexDirection = 'column';
+
+      /* ⭐ ADD THESE TWO LINES ⭐ */
+      menu.textContent = isShown ? "☰" : "✕";   // toggle icon
     });
   }
 })();
+
 
 // PREFILL CHECKOUT
 function prefillCheckout(plan, price){
