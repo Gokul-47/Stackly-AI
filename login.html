@@ -132,21 +132,21 @@
         </form>
 
         <!-- SIGNUP FORM -->
-        <form class="auth-form" id="signupForm" onsubmit="redirect404(event)">
-          <label>Full Name</label>
-          <input type="text" placeholder="John Doe" required>
+        <form class="auth-form" id="signupForm" onsubmit="checkPasswords(event)">
+  <label>Full Name</label>
+  <input type="text" placeholder="John Doe" required>
 
-          <label>Email</label>
-          <input type="email" placeholder="you@example.com" required>
+  <label>Email</label>
+  <input type="email" placeholder="you@example.com" required>
 
-          <label>Password</label>
-          <input type="password" placeholder="********" required>
+  <label>Password</label>
+  <input type="password" id="password" placeholder="********" required>
 
-          <label>Confirm Password</label>
-          <input type="password" placeholder="********" required>
+  <label>Confirm Password</label>
+  <input type="password" id="confirmPassword" placeholder="********" required>
 
-          <button type="submit" class="btn primary">Sign Up</button>
-        </form>
+  <button type="submit" class="btn primary">Sign Up</button>
+</form>
 
         <div class="auth-footer">
           Forgot password? <a href="404.html" onclick="redirect404(event)">Click here</a>
@@ -233,6 +233,25 @@
       if(e) e.preventDefault();
       window.location.href = "404.html";
     }
+
+    function checkPasswords(event) {
+  event.preventDefault();
+
+  const pass = document.getElementById("password").value;
+  const confirmPass = document.getElementById("confirmPassword").value;
+
+  if (pass !== confirmPass) {
+    alert("Passwords do not match!");
+    return;
+  }
+
+  // If matched → redirect
+  redirect404(event);
+}
+
+  
+
+
   </script>
 
   <script src="js/script.js"></script>
